@@ -31,7 +31,7 @@
 
 1. **Navegar a la carpeta**:
    ```powershell
-   cd C:\Users\justg\chef-web
+   cd C:\Users\tu-usuario\chef-web
    ```
 
 2. **Instalar dependencias** (si es la primera vez):
@@ -70,4 +70,3 @@
 
 ---
 
-*Diseñado con ❤️ por Gemini CLI para chefs creativos.*
