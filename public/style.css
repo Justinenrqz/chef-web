@@ -1,0 +1,481 @@
+:root {
+    --bg-color: #f4f1ea;
+    --text-color: #2b2b2b;
+    --border-color: #d1cbbd;
+    --accent-color: #b84a39;
+    --sidebar-bg: #ece9df;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: radial-gradient(#d1cbbd 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    border-right: 2px solid var(--border-color);
+    padding: 30px 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.history-list {
+    flex: 1;
+}
+
+.sidebar-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.sidebar-actions button {
+    width: 100%;
+}
+
+.sidebar-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.history-item {
+    background-color: #faf8f5;
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+}
+
+.history-item:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+    box-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.history-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-family: 'Special Elite', cursive;
+    color: var(--accent-color);
+}
+
+.history-item p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #a8a396;
+    margin-top: 50px;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.container {
+    background-color: #faf8f5;
+    max-width: 750px;
+    width: 100%;
+    padding: 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    position: relative;
+    border-radius: 4px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 3.5em;
+    margin: 0;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
+.separator {
+    height: 2px;
+    background: repeating-linear-gradient(to right, var(--text-color) 0, var(--text-color) 5px, transparent 5px, transparent 10px);
+    margin: 30px 0;
+    opacity: 0.2;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Special Elite', cursive;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.1em;
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed var(--border-color);
+    outline: none;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-bottom-color: var(--accent-color);
+}
+
+button {
+    font-family: 'Special Elite', cursive;
+    background-color: var(--text-color);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    box-shadow: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.loader-bar {
+    height: 4px;
+    width: 100%;
+    background-color: var(--border-color);
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; height: 100%; width: 30%;
+    background-color: var(--accent-color);
+    animation: loadingAnim 1.5s infinite linear;
+}
+
+@keyframes loadingAnim {
+    0% { left: -30%; }
+    100% { left: 100%; }
+}
+
+#recipe-content {
+    line-height: 1.7;
+    font-size: 1.05em;
+}
+
+#recipe-content h1, h2, h3 {
+    font-family: 'Special Elite', cursive;
+    color: var(--text-color);
+    margin-top: 30px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 8px;
+}
+
+#recipe-content h1 {
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px double var(--text-color);
+}
+
+/* Estilo especial para la sección de Maridaje */
+#recipe-content h2:last-of-type, 
+#recipe-content h3:last-of-type {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+#recipe-content p:last-of-type {
+    font-style: italic;
+    background-color: rgba(184, 74, 57, 0.03);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    flex: 1;
+    min-width: 120px;
+    margin-top: 0;
+}
+
+/* SELLO DE APROBACIÓN (LACRE ROJO) */
+#stamp-container {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.stamp-seal {
+    width: 120px;
+    height: 120px;
+    border: 3px double #b84a39;
+    border-radius: 50%;
+    color: #b84a39;
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+    line-height: 1.2;
+    opacity: 0.8;
+    background-color: rgba(184, 74, 57, 0.05);
+    transform: rotate(-15deg) scale(1.1);
+    box-shadow: inset 0 0 10px rgba(184, 74, 57, 0.2);
+    box-sizing: border-box;
+    animation: stampAnimation 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes stampAnimation {
+    0% { transform: rotate(-15deg) scale(3); opacity: 0; }
+    100% { transform: rotate(-15deg) scale(1.1); opacity: 0.8; }
+}
+
+#stamp-date {
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+    border-top: 1px dashed #b84a39;
+    padding-top: 5px;
+}
+
+/* Estilo para botón favorito activo */
+#favorite-btn.active {
+    background-color: #ffd700 !important;
+    color: var(--text-color) !important;
+    border-color: #ffd700 !important;
+}
+
+.small-btn {
+    font-size: 0.9em !important;
+    padding: 10px 15px !important;
+}
+
+.primary-btn {
+    background-color: var(--accent-color) !important;
+}
+
+/* Estilos para Impresión / PDF */
+@media print {
+    .sidebar, .actions, header p, .separator, #recipe-form, #loading {
+        display: none !important;
+    }
+    #stamp-container {
+        display: block !important;
+        top: 20px;
+        right: 20px;
+    }
+    body {
+        background: white !important;
+    }
+    .main-content {
+        padding: 0 !important;
+    }
+    .container {
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    h1 {
+        font-size: 2.5em !important;
+        margin-bottom: 20px !important;
+        text-align: center;
+    }
+}
+
+/* NOTIFICACIONES AESTHETIC */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.notification {
+    background-color: #faf8f5;
+    color: var(--text-color);
+    padding: 15px 25px;
+    border: 2px solid var(--border-color);
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9em;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+    min-width: 250px;
+    max-width: 350px;
+    position: relative;
+    pointer-events: auto;
+    animation: notificationIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    border-radius: 2px;
+}
+
+/* Efecto de "Cinta" arriba */
+.notification::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background-color: rgba(209, 203, 189, 0.4);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.notification.success { border-left: 5px solid #2ecc71; }
+.notification.error { border-left: 5px solid #e74c3c; }
+.notification.info { border-left: 5px solid #3498db; }
+
+@keyframes notificationIn {
+    0% { transform: translateX(120%) rotate(5deg); opacity: 0; }
+    100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+}
+
+.notification.fade-out {
+    animation: notificationOut 0.4s ease forwards;
+}
+
+@keyframes notificationOut {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* MODAL DE CONFIRMACIÓN CUSTOM */
+#modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background-color: #faf8f5;
+    padding: 35px;
+    max-width: 420px;
+    width: 90%;
+    border: 2px solid var(--border-color);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 4px;
+    animation: modalScaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalScaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+    font-family: 'Special Elite', cursive;
+    margin-top: 0;
+    font-size: 1.6em;
+}
+
+#modal-message {
+    font-family: 'Courier Prime', monospace;
+    margin: 20px 0 30px;
+    font-size: 1.1em;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-actions button {
+    margin: 0;
+    flex: 1;
+}
+
+/* Responsividad básica */
+@media (max-width: 800px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; }
+    .main-content { padding: 20px; }
+}

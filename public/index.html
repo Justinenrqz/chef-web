@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Web - Tu Asistente de Cocina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Contenedor de Notificaciones Aesthetic -->
+    <div id="notification-container"></div>
+
+    <!-- Modal de Confirmación Personalizada -->
+    <div id="modal-backdrop" class="hidden">
+        <div class="modal-box">
+            <h2 class="modal-title">📦 Orden de Despacho</h2>
+            <p id="modal-message">¿Desea borrar el historial definitivamente?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="secondary-btn small-btn">Cancelar</button>
+                <button id="modal-confirm-btn" class="primary-btn small-btn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout">
+        <!-- Sidebar de Historial -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Historial</h2>
+            <div id="history-list" class="history-list">
+                <p class="empty-msg">No hay recetas recientes</p>
+            </div>
+            <div class="sidebar-actions">
+                <button id="clear-history-btn" class="secondary-btn small-btn">🗑️ Borrar Historial</button>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <div class="container">
+                <header>
+                    <h1>Chef Web</h1>
+                    <p class="subtitle">El pinche de cocina definitivo</p>
+                    <div class="separator"></div>
+                </header>
+
+                <main>
+                    <form id="recipe-form">
+                        <div class="form-group">
+                            <label for="ingredients">¿Qué ingredientes tienes en la nevera?</label>
+                            <input type="text" id="ingredients" placeholder="Ej: pollo, cebolla, nata" autocomplete="off" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">¿Cuánto tiempo tienes disponible?</label>
+                            <input type="text" id="time" placeholder="Ej: 15m, 1h, 30 minutos" autocomplete="off" required>
+                        </div>
+
+                        <button type="submit" id="submit-btn">👨‍🍳 Cocinar Receta</button>
+                    </form>
+
+                    <div id="loading" class="hidden">
+                        <p>El chef está pensando... <span>🍳🔥</span></p>
+                        <div class="loader-bar"></div>
+                    </div>
+
+                    <div id="recipe-container" class="hidden">
+                        <div class="separator"></div>
+                        
+                        <!-- SELLO DE APROBACIÓN -->
+                        <div id="stamp-container" class="hidden">
+                            <div class="stamp-seal">APROBADO POR<br>EL CHEF<br><span id="stamp-date"></span></div>
+                        </div>
+
+                        <div id="recipe-content"></div>
+                        <div class="actions">
+                            <button id="favorite-btn" class="secondary-btn small-btn">⭐ Favorito</button>
+                            <button id="download-txt-btn" class="secondary-btn small-btn">📥 Descargar .txt</button>
+                            <button id="print-btn" class="secondary-btn small-btn">📄 Guardar PDF / Imprimir</button>
+                            <button id="restart-btn" class="primary-btn">🔄 Hacer otra receta</button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
