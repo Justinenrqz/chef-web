@@ -70,3 +70,13 @@
 
 ---
 
+¿Que enseña este proyecto?
+
+💡 Cómo hablar con un Robot (IA)
+En lugar de escribir las recetas tú mismo, el proyecto enseña cómo pedirle a una Inteligencia Artificial (Gemini) que lo haga por ti. Es como tener un chef profesional atrapado en una caja que obedece tus órdenes según los ingredientes que tengas en tu nevera.
+
+💡 Cómo guardar tus recuerdos (Historial)
+¿Viste que la página tiene un panel a la izquierda? Eso enseña cómo hacer que un ordenador "recuerde" lo que hiciste antes. Aunque apagues el ordenador, las últimas recetas se quedan guardadas en un archivo llamado history.json, que funciona como el diario del chef.
+
+💡 El arte de la "Elegancia" (Diseño Aesthetic)
+Aprenderás que las páginas web no tienen por qué ser aburridas o blancas. Este proyecto usa un estilo de "máquina de escribir antigua". Enseña cómo cambiar las letras, poner fondos que parecen papel real y hasta añadir un sello de "Aprobado" que aparece de golpe cuando la receta está lista.
