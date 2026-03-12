@@ -4,6 +4,16 @@
 
 ---
 
+
+## 🎥 Video 
+
+
+https://github.com/user-attachments/assets/01e865b4-7da8-44f3-a0be-b1dece7b0bc0
+
+
+
+---
+
 ## ✨ Características Principales
 
 - **Diseño Aesthetic**: Interfaz inspirada en máquinas de escribir antiguas y cuadernos de notas vintage. Utiliza tipografías como *Special Elite* y *Courier Prime*.
