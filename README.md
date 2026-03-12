@@ -70,7 +70,7 @@
 
 ---
 
-¿Que enseña este proyecto?
+## 🧠 ¿Que enseña este proyecto?
 
 💡 Cómo hablar con un Robot (IA)
 En lugar de escribir las recetas tú mismo, el proyecto enseña cómo pedirle a una Inteligencia Artificial (Gemini) que lo haga por ti. Es como tener un chef profesional atrapado en una caja que obedece tus órdenes según los ingredientes que tengas en tu nevera.
